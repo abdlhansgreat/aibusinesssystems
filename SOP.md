@@ -1,6 +1,6 @@
 # SOP — Meta Ad Research → Hook Extraction → Ad Script Writing
 
-**Version:** 1.0 (2026-07-09)
+**Version:** 1.1 (2026-07-09)
 **Owner:** Indian Wedding Club
 **Purpose:** Repeatable process to research the world's best webinar/masterclass ads, extract their hooks and structures, and produce ready-to-shoot ad scripts that fill our webinar with Indian wedding business owners.
 
@@ -24,7 +24,9 @@
 3. For each candidate actor, run `fetch-actor-details` to check **input schema, pricing, rating, success rate** BEFORE running it.
 4. Document which tools were chosen, why, and their cost model.
 
-**Known-good tools (see MEMORY.md for updates):** listed in memory after each session.
+**Known-good tools (see MEMORY.md for updates):**
+- ⚠️ **Pre-approve the Apify + Meta connectors BEFORE starting** (claude.ai → Settings → Connectors → allow without approval). In the first session both hard-blocked with `MCP tool call requires approval` and could not be used at all.
+- `WebSearch` is a reliable fallback engine; `WebFetch` was gateway-blocked (403) in the remote environment — prefer WebSearch snippet-mining.
 
 ## Step 2 — Ad hunting → one `02-ads-<category>.md` per category
 
@@ -104,4 +106,5 @@ Agent: **memory-keeper**
 
 | Version | Date | Change |
 |---|---|---|
+| 1.1 | 2026-07-09 | Added pre-approval warning for Apify/Meta connectors and WebSearch/WebFetch reality note after first session ran with connectors blocked. |
 | 1.0 | 2026-07-09 | Initial SOP created during first webinar-ad-research session. |
